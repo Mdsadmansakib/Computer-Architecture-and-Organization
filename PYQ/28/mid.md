@@ -1,6 +1,6 @@
 
 # Computer Architecture and Organization (CSE-2204) Exam Solutions
-## Incourse Exam-2014, University of Dhaka
+## Incourse Exam-2024, University of Dhaka
 
 ### Question 1
 **Show the layers of abstraction in computer systems. What do abstraction layers provide? State its relative advantages over other representation of computer systems.**
