@@ -117,14 +117,70 @@ Are there instructions waiting? → No → End
                          PCU       DPU
 ```
 
-**Components:**
-- **PCU** = Program Control Unit
-- **AR** = Address Register (Stores memory address for read/write operations)
-- **IR** = Instruction Register (Holds current instruction being decoded/executed)
-- **PC** = Program Counter (Stores address of next instruction)
-- **DPU** = Data Processing Unit
-- **AC** = Accumulator Register (Holds intermediate arithmetic and logic results)
-- **DR** = Data Register (Temporarily holds data read from or written to memory)
+# Key CPU Components and Their Roles
+
+These terms are key components of a CPU (Central Processing Unit) architecture, primarily related to instruction execution and data handling. Here's a concise breakdown:
+
+---
+
+## 1. Program Control Unit (PCU)
+
+- **Role**: Manages the fetch-decode-execute cycle of instructions.
+- **Function**: Coordinates operations between CPU registers, memory, and the Data Processing Unit (DPU).
+
+---
+
+## 2. Registers in the CPU
+
+### (A) Address Register (AR)
+
+- **Purpose**: Stores the memory address from which data will be read or written.
+- **Example**: If the CPU needs to fetch data from memory location `0x1000`, AR holds `0x1000`.
+
+### (B) Instruction Register (IR)
+
+- **Purpose**: Holds the current instruction being decoded/executed.
+- **Example**: For the instruction `ADD R1, R2`, IR stores the binary opcode of `ADD`.
+
+### (C) Program Counter (PC)
+
+- **Purpose**: Stores the address of the next instruction to execute.
+- **Behavior**: Increments automatically after each fetch or jumps for branches.
+
+### (D) Accumulator (AC)
+
+- **Purpose**: Temporarily stores intermediate results of arithmetic/logic operations.
+- **Example**: After `ADD R1, R2`, the sum is held in AC before being stored elsewhere.
+
+### (E) Data Register (DR)
+
+- **Purpose**: Temporarily holds data read from memory or to be written to memory.
+- **Example**: When loading data from AR’s address, DR holds the retrieved value.
+
+---
+
+## 3. Data Processing Unit (DPU)
+
+- **Role**: Performs arithmetic/logic operations (e.g., `ADD`, `AND`).
+- **Components**: Includes the ALU (Arithmetic Logic Unit) and registers like AC.
+
+---
+
+## How They Work Together
+
+### **Fetch**
+- PC sends the next instruction address to memory → Fetched instruction stored in IR.
+
+### **Decode**
+- PCU decodes the instruction in IR.
+
+### **Execute**
+- **For memory access**: AR holds the target address; DR holds data.
+- **For calculations**: DPU uses AC for results.
+
+### **Update**
+- PC increments or jumps to the next instruction.
+
 
 ### Characteristics
 
