@@ -157,4 +157,4 @@ mul $t6, $t2, $t5 # $t6 = $t2 * $t5
 
 # Store the result into memory
 sw $t6, Z         # Z = final result
-
+```
