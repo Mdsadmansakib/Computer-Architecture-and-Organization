@@ -129,3 +129,32 @@
 2. Branch offsets are in words (PC = PC + 4 + offset<<2)
 3. Jump targets are absolute word addresses (PC = target<<2)
 4. Memory operations use base+offset addressing
+5. 
+
+
+
+
+
+
+✅ Expression to Evaluate:
+Z = (A + B) * (C - D)
+```armasm
+
+# Load values from memory
+lw $t0, A         # Load A into $t0
+lw $t1, B         # Load B into $t1
+lw $t3, C         # Load C into $t3
+lw $t4, D         # Load D into $t4
+
+# Perform A + B
+add $t2, $t0, $t1 # $t2 = A + B
+
+# Perform C - D
+sub $t5, $t3, $t4 # $t5 = C - D
+
+# Multiply (A + B) * (C - D)
+mul $t6, $t2, $t5 # $t6 = $t2 * $t5
+
+# Store the result into memory
+sw $t6, Z         # Z = final result
+
