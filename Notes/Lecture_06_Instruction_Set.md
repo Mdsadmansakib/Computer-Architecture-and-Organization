@@ -1,5 +1,5 @@
-
 📘 Lecture 06 – Instruction Set Architecture & Addressing Modes
+
 🔷 1. CISC vs RISC Architectures
 ✅ CISC (Complex Instruction Set Computer)
 Large instruction set: Many instructions, some of which perform complex tasks.
@@ -43,9 +43,6 @@ What operation to perform (opcode)
 Which operands to use (addresses/registers)
 
 ✅ Assembly Notation:
-nginx
-Copy
-Edit
 op X1, X2, ..., Xn
 Where:
 
@@ -61,9 +58,6 @@ Only load and store access memory
 Most instructions use registers as operands
 
 ✅ Format Example:
-css
-Copy
-Edit
 Rd := F(Rs, S2)
 Where:
 
@@ -74,22 +68,19 @@ Rs is source register
 S2 is either another register or an immediate value
 
 🔷 4. Operand Extension
-Sometimes operands in instructions are shorter than the CPU’s standard word size. This causes a problem when extending these smaller values to the full size needed. There are two solutions:
+Sometimes operands in instructions are shorter than the CPU's standard word size. This causes a problem when extending these smaller values to the full size needed. There are two solutions:
 
 ✅ Sign Extension
-Used for signed numbers (two’s complement).
+Used for signed numbers (two's complement).
 
 Copies the sign bit (leftmost bit) to extend.
 
-Preserves the number’s value.
+Preserves the number's value.
 
 🔹 Example:
-
-arduino
-Copy
-Edit
 Original (13-bit):     1010101010101  (negative)
 Extended (32-bit): 1111111111111111101010101010101
+
 ✅ Zero Extension
 Used for unsigned numbers.
 
@@ -98,12 +89,9 @@ Pads with zeros to the left.
 Used for addresses or constants.
 
 🔹 Example:
-
-makefile
-Copy
-Edit
 Original:     1010101010101
 Extended: 00000000000000001010101010101
+
 🔷 5. Addressing Modes
 ✅ Purpose:
 Addressing modes determine how an instruction identifies the location of its operand.
@@ -196,6 +184,7 @@ Register Direct	In register	MOVE #99, D1
 Register Indirect	In memory, address in register	MOVE.B (A0), D1
 Reg Indirect with Offset	Address = Register + Offset	SW Rt, OFFSET(Rs)
 Auto Indexing	Register is auto-incremented/decremented	LDR R0, [R1], #4 or [R1, #4]!
+
 ---
 
 ## Exercises
@@ -211,25 +200,22 @@ Auto Indexing	Register is auto-incremented/decremented	LDR R0, [R1], #4 or [R1, 
 ### Q2. Perform sign and zero extension for the binary number `1010101010101` (13-bit) to 32-bit.
 
 **Sign Extension:**
-```
 Leftmost bit = 1 → replicate 1
 Result: 11111111111111111111010101010101
-```
+
 
 **Zero Extension:**
-```
 Pad with 0s to the left
 Result: 00000000000000000001010101010101
-```
+
 
 ---
 
 ### Q3. What is the effective address for `STB Rs, Rd(S2)` when Rd = 0x1000 and S2 = 0x20?
 
 **Answer:**
-```
 Effective Address = Rd + S2 = 0x1000 + 0x20 = 0x1020
-```
+
 
 ---
 
@@ -246,5 +232,3 @@ Effective Address = Rd + S2 = 0x1000 + 0x20 = 0x1020
 - Enables compact encoding.
 - Code can be relocated in memory.
 - Simplifies addressing with offsets for array elements.
-
----
