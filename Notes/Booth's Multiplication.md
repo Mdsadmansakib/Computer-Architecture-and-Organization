@@ -70,3 +70,39 @@ START
 ## Visualization
 
 ![Booth's Algorithm Flowchart](https://github.com/Mdsadmansakib/Computer-Architecture-and-Organization/blob/main/Notes/Assets/booth_multiplication_demo.jpg) 
+
+
+
+
+# Why Booth's Algorithm is Superior to Repeated Addition
+
+## Key Advantages Over Repeated Addition
+
+### 1. Speed Efficiency
+- **Repeated Addition**: Requires N additions for N-bit numbers (O(n) complexity)
+- **Booth's Algorithm**: Skips consecutive 1s/0s (average case O(n/2) complexity)
+
+### 2. Hardware Optimization
+| Feature          | Repeated Addition | Booth's Algorithm |
+|------------------|-------------------|-------------------|
+| Clock Cycles     | High              | Optimized         |
+| Circuit Complexity | Simple          | Smarter           |
+| Power Consumption | Higher           | Lower             |
+
+### 3. Signed Number Handling
+```text
+Repeated Addition: 
+   - Requires separate sign handling
+   - Extra steps for negative numbers
+
+Booth's Algorithm:
+   - Natively processes 2's complement
+   - No special cases needed
+```
+4. Real-World Applications
+CPU Design: Used in ARM and x86 processors
+
+DSP Chips: Critical for fast signal processing
+
+FPGAs: More efficient hardware mapping
+
