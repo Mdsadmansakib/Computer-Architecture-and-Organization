@@ -67,6 +67,6 @@ START
 
 ```
 
-##Visualization
+## Visualization
 
 ![Booth's Algorithm Flowchart](https://github.com/Mdsadmansakib/Computer-Architecture-and-Organization/blob/main/Notes/Assets/booth_multiplication_demo.jpg) 
