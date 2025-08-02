@@ -1,4 +1,4 @@
-# Pipeline Processing - Complete Guide
+# Pipeline Processing 
 
 ## What is Pipelining?
 
